@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/johnnylord/blackhat#readme",
   "devDependencies": {
-    "documentjs": "^0.5.5"
+    "documentjs": "^0.5.5",
+    "node-sass": "^4.11.0"
   }
 }
