@@ -1,0 +1,29 @@
+// Base multiply weight of the line-height
+$html-line-height: 1.4 !default;
+
+// Base font-size(the font size of the root element)
+$html-font-size: 1.25rem !default;
+$default-font-size: 1rem !default;
+
+// Vertical rhythm size
+$vertical-rhythm: 1.75rem !default;
+
+// Map of the type scale for different tag
+// see: http://www.modularscale.com/?1.25&em&1.30&web&text
+$type-scale-tag: (
+  h1: 2.856rem,
+  h2: 2.197rem,
+  h3: 1.69rem,
+  h4: 1.3rem,
+  p: 1rem,
+) !default;
+
+// Map of the type scale for different typography class
+// see: http://www.modularscale.com/?1.25&em&1.1&web&text
+$type-scale-cls: (
+  t1: 1.331rem,
+  t2: 1.21rem,
+  t3: 1.1rem,
+  s1: 0.909rem,
+  s2: 0.825rem,
+) !default;
