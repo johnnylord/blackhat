@@ -11,19 +11,34 @@ html {
   padding: 0;
 }
 
+a:focus {
+  outline: none;
+}
+
 hr {
   margin-top: $vertical-rhythm;
   border-color: map-get($colors, gray);
   background-color: map-get($colors, gray);
 }
 
-ul li {
-  list-style: circle inside;
-}
-
 ul, ol {
   margin-top: $vertical-rhythm;
   padding-left: $padding-size;
+}
+
+li {
+  list-style: circle inside;
+}
+
+input, textarea, button {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+
+  @include on-event {
+    outline: none;
+  }
 }
 
 table {
