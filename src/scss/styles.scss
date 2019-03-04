@@ -9,17 +9,18 @@
 @import 'lib/fontawesome/regular.scss';
 
 
+// Variables
+// =======
+@import 'variables/setting';
+@import 'variables/typography';
+@import 'variables/color';
+@import 'variables/font';
+
+
 // Helpers
 // =======
 @import 'helpers/functions';
 @import 'helpers/mixins';
-
-
-// Variables
-// =======
-@import 'variables/typography';
-@import 'variables/color';
-@import 'variables/font';
 
 
 // Base
