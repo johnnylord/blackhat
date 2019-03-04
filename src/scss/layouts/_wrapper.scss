@@ -1,0 +1,15 @@
+/**
+ * Main content wraps
+ * 1. Make the wrap full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.l-wrap {
+  max-width: $wrap-max-width; /* 1 */
+  margin: 0 auto; /* 2 */
+  padding: 0 $padding-size;
+  width: 100%; /* 1 */
+
+  overflow: auto;
+}
+
