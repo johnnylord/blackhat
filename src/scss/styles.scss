@@ -2,6 +2,7 @@
 
 // Library
 // =======
+@import 'lib/normalize';
 @import 'lib/fontawesome/fontawesome.scss';
 @import 'lib/fontawesome/brands.scss';
 @import 'lib/fontawesome/solid.scss';
@@ -23,8 +24,8 @@
 
 // Base
 // ======
-@import 'base/normalize';
 @import 'base/element';
+@import 'base/typography';
 
 
 // Layout
