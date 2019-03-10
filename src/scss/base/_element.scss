@@ -30,17 +30,6 @@ li {
   list-style: circle inside;
 }
 
-input, textarea, button {
-  border: 0;
-  border-radius: 0;
-  outline: none;
-  appearance: none;
-
-  @include on-event {
-    outline: none;
-  }
-}
-
 table {
   margin-top: $vertical-rhythm;
 }
