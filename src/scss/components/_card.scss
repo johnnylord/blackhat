@@ -1,0 +1,116 @@
+// Customized list container rather than default l-list
+// Change the number of cards on each row of the list based
+// on the view's size
+.c-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: $t-vertical-rhythm;
+
+  list-style: none;
+
+  // Style for card list item
+  // 1. One card in the view of small device
+  // 2. Two card in the view of medium device
+  // 3. THree card in the view of large device
+  .c-cards__item {
+    flex-basis: 100%; /* 1 */
+    margin-top: $t-vertical-rhythm;
+
+    list-style: none;
+
+    // Remove the first component's top margin
+    &:nth-child(-n+1) { margin: 0; }
+
+    @media (min-width: map-get($l-breakpoints, medium)) {
+      flex-basis: 45%; /* 2 */
+
+      // Remove the first two components' top margin
+      &:nth-child(-n+2) { margin: 0; }
+    }
+
+    @media (min-width: map-get($l-breakpoints, large)) {
+      flex-basis: 30%; /* 3 */
+
+      // Remove the first three components' top margin
+      &:nth-child(-n+3) { margin: 0; }
+    }
+
+    // Remove the margin of the .c-card when in the .c-cards list
+    .c-card { margin: 0; }
+  }
+}
+
+.c-card {
+  display: flex;
+  flex-direction: column;
+  margin-top: $t-vertical-rhythm;
+
+  border-radius: $c-border-radius;
+
+  background: map-get($c-colors, black);
+
+  box-shadow: 0 7px 11px -1px rgba(black, .5);
+  overflow: hidden;
+
+  // Enphasize card image when hovering over card
+  &:hover {
+    .c-card__image {
+      filter: contrast(100%);
+    }
+  }
+
+  // Style for feature image in the card
+  // Use `style="background-image: url(...)"` in the HTML markup
+  .c-card__image {
+    position: relative;
+    border-top-left-radius: $c-border-radius;
+    border-top-right-radius: $c-border-radius;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include prefix(transition, filter 0.5s cubic-bezier(.43, .41, .22, .91));
+
+    filter: contrast(70%);
+    overflow: hidden;
+
+    // Used to expand the area of the card-image
+    &::before {
+      display: block;
+      padding-top: 50%; // 1/2 ratio
+      content: "";
+    }
+  }
+
+  // Description section of the card
+  .c-card__description {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: $c-padding;
+
+    // Title section in the description
+    .c-card__title {
+      margin: 0;
+      font-size: map-get($t-type-scale-tag, h3);
+      font-weight: bold;
+    }
+
+    // Content section in the description
+    .c-card__content {
+      flex: 1 1 auto;
+      margin: .5rem 0 0 0;
+      font-size: map-get($t-type-scale-cls, s2);
+
+      * {
+        margin-top: .5rem;
+        &:first-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
