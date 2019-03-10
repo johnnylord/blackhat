@@ -1,0 +1,42 @@
+// Style of o-link
+.o-link {
+  position: relative;
+
+  cursor: pointer;
+
+  @include prefix(transition, color .5s ease);
+  @include prefix(backface-visibility, hidden);
+
+  // Bar beneath the link
+  &::after {
+    position: absolute;
+    left: 50%;
+    bottom: -0.1em;
+    width:0;
+    height: 0.1em;
+
+    content: "";
+
+    @include prefix(transition, all 0.5s ease);
+    @include prefix(transform, translateX(-50%));
+
+    @include prefix(backface-visibility, hidden);
+  }
+
+  // Style of the link of different colors
+  @each $key, $value in $c-colors {
+
+    &.o-link--#{""+$key} {
+      color: $value;
+
+      &:hover {
+        color: lighten($value, 10%);
+      }
+
+      &:hover::after {
+        width: 100%;
+        background: lighten($value, 10%);
+      }
+    }
+  }
+}
