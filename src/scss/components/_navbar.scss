@@ -1,0 +1,177 @@
+// Dependency: jquery
+// <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+
+// Setting of navbar
+$navbar-height: 60px;
+
+// Style of navbar component
+.c-navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: $navbar-height;
+
+  background: map-get($c-colors, black);
+
+  font-weight: bold;
+  box-shadow: 0 7px 11px -1px rgba(black, .5);
+  @include prefix(transition, all .5s ease);
+
+  z-index: 1000;
+
+  // Add #jsNavbar to have the dynamic navbar effect
+  &.c-navbar--dynamic {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    &.is-collapsed {
+      display: flex;
+      top: -$navbar-height;
+    }
+  }
+
+  // Brand section in the navbar
+  .c-navbar__brand {
+    display: inline-flex;
+    margin: 0 auto 0 0;
+    height: 100%;
+
+    vertical-align: middle;
+    line-height: $navbar-height;
+    font-size: map-get($t-type-scale-tag, h4);
+  }
+
+  // Navigation section in the navbar
+  // Add #jsNavbarNavs to have RWD effect
+  .c-navbar__navs {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: $navbar-height;
+    left: 0;
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    list-style: none;
+
+    background: map-get($c-colors, black);
+
+    vertical-align: middle;
+    line-height: $navbar-height;
+
+    &.is-collapsed { display: none; }
+
+    // Place navs inside the navbar in medium view
+    @media (min-width: map-get($l-breakpoints, medium)) {
+      position: initial;
+      display: inline-flex;
+      flex-direction: row;
+      margin: 0;
+      padding: 0;
+      width: auto;
+      height: 100%;
+
+      &.is-collapsed { display: inline-flex; }
+    }
+
+    // Nav item in the navs section
+    .c-navbar__item {
+      margin: 0;
+      padding: 0 1rem;
+
+      border-top: 2px solid darken(map-get($c-colors, gray), 15%);
+
+      text-transform: uppercase;
+
+      list-style: none;
+
+      &:hover { background: darken(map-get($c-colors, gray), 15%); }
+
+      a {
+        display: block;
+        &::after {
+          display:none;
+        }
+      }
+
+      // Nav item will place inline in the navbar
+      @media (min-width: map-get($l-breakpoints, medium)) {
+        margin: 0 1rem 0 0;
+        padding: 0;
+        width: auto;
+        height: 100%;
+
+        border: none;
+
+        &:last-child { margin: 0; }
+
+        &:hover { background: inherit; }
+
+        a {
+          display: initial;
+          &::after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  // Mobile icon section in the navbar
+  .c-navbar__mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $navbar-height;
+    height: $navbar-height;
+
+    // Hide the mobile icon in medium or large view port
+    @media (min-width: map-get($l-breakpoints, medium)) {
+      display: none;
+    }
+  }
+}
+
+// Applied to the element inside the element with classed 'c-navbar__mobile'
+// Also, place a <span> element inside the element.
+//
+// <div class="c-navbar__mobile">
+//    <a id="jsNavbarToggle">
+//      <span></span>
+//    </a>
+// </div>
+#jsNavbarToggle {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+
+  span, span::before, span::after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    position: absolute;
+    display: block;
+    background: map-get($c-colors, white);
+    content: '';
+    transition: all 300ms ease-in-out;
+  }
+
+  span::before { top: -10px; }
+  span::after { bottom: -10px; }
+
+  &.is-active span {
+    background-color: transparent;
+
+    &:before,
+    &:after { top: 0; }
+
+    &:before { transform: rotate(45deg); }
+    &:after { transform: rotate(-45deg); }
+  }
+}
