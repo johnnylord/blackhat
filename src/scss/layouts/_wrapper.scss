@@ -3,9 +3,11 @@
 // 2. Center it in the viewport
 // 3. Leave some space on the edges, especially valuable on small screens
 .l-wrap {
+  display: flex;
+  align-items: flex-start;
   max-width: $l-wrap-max-width; /* 1 */
   margin: 0 auto; /* 2 */
-  padding: 0 $t-padding-size;
+  padding: $l-padding;
   width: 100%; /* 1 */
 
   overflow: auto;
