@@ -16,11 +16,13 @@
   overflow: hidden;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  opacity: $o-opacity;
 
-	@include prefix(transition, background .5s ease);
+	@include prefix(transition, opacity .5s ease);
 
   &:hover, &:focus {
     outline: 0;
+    opacity: 1;
   }
 
   // .o-btn class with different colors
@@ -30,7 +32,7 @@
       background: $value;
 
       &:hover {
-        background: lighten($value, 5%);
+        opacity: 1;
       }
     }
   }

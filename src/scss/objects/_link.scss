@@ -4,8 +4,13 @@
 
   cursor: pointer;
 
-  @include prefix(transition, color .5s ease);
+  opacity: $o-opacity;
+  @include prefix(transition, opacity .5s ease);
   @include prefix(backface-visibility, hidden);
+
+  &:hover {
+    opacity: 1;
+  }
 
   // Bar beneath the link
   &::after {
@@ -29,13 +34,13 @@
     &.o-link--#{""+$key} {
       color: $value;
 
-      &:hover {
-        color: lighten($value, 10%);
+      &::after {
+        background: $value;
       }
 
       &:hover::after {
         width: 100%;
-        background: lighten($value, 10%);
+        opacity: 1;
       }
     }
   }

@@ -1,0 +1,60 @@
+// Style of o-category
+.o-category {
+  display: inline-block;
+  padding: $o-padding;
+
+  border-radius: $o-border-radius;
+
+  background: map-get($c-colors, orange);
+
+  color: map-get($c-colors, white);
+  font-weight: bold;
+  text-align: center;
+
+  opacity: 0.85;
+
+  @include prefix(transition, all 0.2s ease);
+
+  // Overwrite the style of the <a> category when event occur
+  @include on-event {
+    color: map-get($c-colors, white);
+  }
+
+  &:hover {
+    opacity: 1;
+
+    .o-category__detail {
+      margin: 0 0 0 5px;
+      padding: $o-padding;
+      width: auto;
+      opacity: 1;
+    }
+  }
+
+  // The dot on the category
+  .o-category__detail {
+    display: inline-block;
+    width: 0;
+
+    border-radius: $o-border-radius;
+    background: rgba(0, 0, 0, 0.1);
+
+    font-size: map-get($t-type-scale-cls, s2);
+    font-weight: bold;
+    text-align: center;
+
+    @include prefix(transition, all 0.2s ease);
+
+    vertical-align: middle;
+    line-height: 1;
+    word-spacing: .1rem;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  @each $key, $value in $c-colors {
+    &.o-category--#{""+$key} {
+      background: $value;
+    }
+  }
+}

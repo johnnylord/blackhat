@@ -10,12 +10,18 @@
 
   box-shadow: 0 4px 6px -1px rgba(black, .5);
   cursor: pointer;
+  opacity: $o-opacity;
 
-  @include prefix(transition, background .5s ease);
+  @include prefix(transition, opacity .5s ease);
 
   // Overwrite the style of the <a> tag when event occur
   @include on-event {
     color: map-get($c-colors, white);
+    opacity: 1;
+  }
+
+  &:hover::before {
+    opacity: 1;
   }
 
   // The triangle section placed on the left side of the tag
@@ -31,7 +37,8 @@
     border-right-color: map-get($c-colors, orange);
     border-radius: (($t-html-line-height*$t-default-font-size)/2) 0 0 (($t-html-line-height*$t-default-font-size)/2);
 
-    @include prefix(transition, border-right-color .5s ease);
+    opacity: $o-opacity;
+    @include prefix(transition, opacity .5s ease);
   }
 
   // The dot on the tag
@@ -46,6 +53,7 @@
     border-radius: 3px;
 
     background: map-get($c-colors, white);
+    opacity: $o-opacity;
   }
 
   @each $key, $value in $c-colors {
@@ -55,9 +63,9 @@
         border-right-color: $value;
       }
       &:hover {
-        background: lighten($value, 5%);
+        opacity: 1;
         &::before {
-          border-right-color: lighten($value, 5%);
+          opacity: 1;
         }
       }
     }
