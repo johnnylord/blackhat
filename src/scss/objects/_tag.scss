@@ -1,0 +1,65 @@
+// Style of o-tag
+.o-tag {
+  display: inline-block;
+  position: relative;
+  padding: 0 .5rem;
+
+  background: map-get($c-colors, orange);
+
+  color: map-get($c-colors, white);
+
+  box-shadow: 0 4px 6px -1px rgba(black, .5);
+  cursor: pointer;
+
+  @include prefix(transition, background .5s ease);
+
+  // Overwrite the style of the <a> tag when event occur
+  @include on-event {
+    color: map-get($c-colors, white);
+  }
+
+  // The triangle section placed on the left side of the tag
+  &::before {
+    content: "";
+    position: absolute;
+    left: -($t-html-line-height*$t-default-font-size);
+    top: 0;
+    width: 0;
+    height: ($t-html-line-height*$t-default-font-size);
+
+    border: (($t-html-line-height*$t-default-font-size)/2) solid transparent;
+    border-right-color: map-get($c-colors, orange);
+    border-radius: (($t-html-line-height*$t-default-font-size)/2) 0 0 (($t-html-line-height*$t-default-font-size)/2);
+
+    @include prefix(transition, border-right-color .5s ease);
+  }
+
+  // The dot on the tag
+  &::after {
+    content: "";
+    position: absolute;
+    left: -3px;
+    top: calc(#{($t-html-line-height*$t-default-font-size)/2} - 3px);
+    width: 6px;
+    height: 6px;
+
+    border-radius: 3px;
+
+    background: map-get($c-colors, white);
+  }
+
+  @each $key, $value in $c-colors {
+    &.o-tag--#{""+$key} {
+      background: $value;
+      &::before {
+        border-right-color: $value;
+      }
+      &:hover {
+        background: lighten($value, 5%);
+        &::before {
+          border-right-color: lighten($value, 5%);
+        }
+      }
+    }
+  }
+}
