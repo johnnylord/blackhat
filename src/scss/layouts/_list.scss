@@ -1,0 +1,32 @@
+// Style of list component
+.l-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  // list item
+  .l-item {
+    display: block;
+
+    &.l-item--inline {
+      display: inline-block;
+    }
+
+    &.l-item--component {
+      margin-top: $t-vertical-rhythm;
+
+      // Reset the margin value of the target component
+      >:first-child {
+        margin: 0;
+      }
+    }
+
+    &.l-item--object {
+      margin: .25rem;
+    }
+  }
+}
+
