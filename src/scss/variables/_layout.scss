@@ -1,5 +1,5 @@
 // breakpoints map
-$breakpoints: (
+$l-breakpoints: (
   'small': 320px,
   'x-small': 599px,
   'medium': 768px,
@@ -9,4 +9,4 @@ $breakpoints: (
 ) !default;
 
 // Container's maximum width and minimum width
-$wrap-max-width: 1200px !default;
+$l-wrap-max-width: 1200px !default;
