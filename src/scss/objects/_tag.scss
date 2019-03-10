@@ -4,9 +4,11 @@
   position: relative;
   padding: 0 .5rem;
 
+  border-radius: 0 $o-border-radius $o-border-radius 0;
   background: map-get($c-colors, orange);
 
   color: map-get($c-colors, white);
+  font-weight: bold;
 
   box-shadow: 0 4px 6px -1px rgba(black, .5);
   cursor: pointer;
@@ -14,14 +16,11 @@
 
   @include prefix(transition, opacity .5s ease);
 
-  // Overwrite the style of the <a> tag when event occur
-  @include on-event {
-    color: map-get($c-colors, white);
+  &:hover {
     opacity: 1;
-  }
-
-  &:hover::before {
-    opacity: 1;
+    &::before {
+      opacity: 1;
+    }
   }
 
   // The triangle section placed on the left side of the tag
@@ -61,12 +60,6 @@
       background: $value;
       &::before {
         border-right-color: $value;
-      }
-      &:hover {
-        opacity: 1;
-        &::before {
-          opacity: 1;
-        }
       }
     }
   }

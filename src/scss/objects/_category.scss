@@ -12,13 +12,9 @@
   text-align: center;
 
   opacity: 0.85;
+  cursor: pointer;
 
-  @include prefix(transition, all 0.2s ease);
-
-  // Overwrite the style of the <a> category when event occur
-  @include on-event {
-    color: map-get($c-colors, white);
-  }
+  @include prefix(transition, all 0.5s ease);
 
   &:hover {
     opacity: 1;
