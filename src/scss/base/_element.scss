@@ -14,14 +14,14 @@ a:focus {
 }
 
 hr {
-  margin-top: $vertical-rhythm;
-  border-color: map-get($colors, gray);
-  background-color: map-get($colors, gray);
+  margin-top: $t-vertical-rhythm;
+  border-color: map-get($c-colors, gray);
+  background-color: map-get($c-colors, gray);
 }
 
 ul, ol {
-  margin-top: $vertical-rhythm;
-  padding-left: $padding-size;
+  margin-top: $t-vertical-rhythm;
+  padding-left: $t-padding-size;
 }
 
 li {
@@ -29,7 +29,7 @@ li {
 }
 
 table {
-  margin-top: $vertical-rhythm;
+  margin-top: $t-vertical-rhythm;
 }
 
 embed, iframe, img, object, video {
@@ -38,7 +38,7 @@ embed, iframe, img, object, video {
 
 // For codeblock in the post
 pre {
-  margin-top: $vertical-rhythm;
+  margin-top: $t-vertical-rhythm;
   white-space: pre;
   word-wrap: break-word;
   overflow: auto;

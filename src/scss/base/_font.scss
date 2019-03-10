@@ -1,6 +1,6 @@
 // Light font
 @font-face {
-  font-family: #{$default-font-family};
+  font-family: #{$f-default-font-family};
   src: font('DejaVuSans-ExtraLight.woff2') format('woff2'),
     font('DejaVuSans-ExtraLight.woff') format('woff');
   font-weight: 100;
@@ -9,7 +9,7 @@
 
 // Normal font
 @font-face {
-  font-family: #{$default-font-family};
+  font-family: #{$f-default-font-family};
   src: font('DejaVuSans.woff2') format('woff2'),
     font('DejaVuSans.woff') format('woff');
   font-weight: normal;
@@ -18,7 +18,7 @@
 
 // Bold font
 @font-face {
-  font-family: #{$default-font-family};
+  font-family: #{$f-default-font-family};
   src: font('DejaVuSans-Bold.woff2') format('woff2'),
     font('DejaVuSans-Bold.woff') format('woff');
   font-weight: bold;
@@ -27,7 +27,7 @@
 
 // Italic font
 @font-face {
-  font-family: #{$default-font-family};
+  font-family: #{$f-default-font-family};
   src: font('DejaVuSans-Oblique.woff2') format('woff2'),
     font('DejaVuSans-Oblique.woff') format('woff');
   font-weight: normal;
@@ -36,7 +36,7 @@
 
 // Bold and Italic font
 @font-face {
-  font-family: #{$default-font-family};
+  font-family: #{$f-default-font-family};
   src: font('DejaVuSans-BoldOblique.woff2') format('woff2'),
     font('DejaVuSans-BoldOblique.woff') format('woff');
   font-weight: bold;
@@ -45,7 +45,7 @@
 
 // Latex Font
 @font-face {
-  font-family: #{$latex-font-family};
+  font-family: #{$f-latex-font-family};
   src: font('DejaVuMathTeXGyre-Regular.woff2') format('woff2'),
     font('DejaVuMathTeXGyre-Regular.woff') format('woff');
   font-weight: normal;

@@ -1,27 +1,27 @@
 // Basic typography style for text
 html {
-  font-size: $html-font-size;
-  line-height: $html-line-height;
+  font-size: $t-html-font-size;
+  line-height: $t-html-line-height;
 }
 
 body {
-  background: map-get($colors, gray);
-  font-family: #{$default-font-family};
-  color: map-get($colors, white);
-  word-spacing: $word-space;
+  background: map-get($c-colors, gray);
+  font-family: #{$f-default-font-family};
+  color: map-get($c-colors, white);
+  word-spacing: $t-word-space;
 }
 
 // Typography for each tag in type-scale-tag
-@each $key, $value in $type-scale-tag {
+@each $key, $value in $t-type-scale-tag {
   #{$key} {
     font-size: $value;
 
     @if $key == h1 {
-      margin-top: ($vertical-rhythm * 2);
+      margin-top: ($t-vertical-rhythm * 2);
     } @else if $key == p {
-      margin-top: ($vertical-rhythm / 2);
+      margin-top: ($t-vertical-rhythm / 2);
     } @else {
-      margin-top: $vertical-rhythm;
+      margin-top: $t-vertical-rhythm;
     }
 
     &:first-child {
