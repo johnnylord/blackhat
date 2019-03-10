@@ -17,6 +17,7 @@
 @import 'variables/color';
 @import 'variables/typography';
 @import 'variables/font';
+@import 'variables/object';
 
 
 // Helpers
@@ -34,11 +35,12 @@
 
 // Layout
 // ======
-@import 'layout/wrapper';
+@import 'layouts/wrapper';
 
 
 // Objects
 // =======
+@import 'objects/button';
 
 
 // Components
