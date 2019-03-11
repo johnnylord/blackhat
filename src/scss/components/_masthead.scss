@@ -1,0 +1,30 @@
+/**
+ * @stylesheet masthead-component Masthead Component
+ * @parent styleguide.components
+ *
+ * This page show how to use masthead component
+ */
+
+.c-masthead {
+  display: flex;
+  flex-direction: column;
+  margin-top: $t-vertical-rhythm;
+  padding: $t-vertical-rhythm $c-padding;
+  width: 100%;
+
+  border-radius: $c-border-radius;
+
+  background: map-get($c-colors, black);
+
+  text-align: center;
+
+  box-shadow: 0 7px 11px -1px rgba(black, .5);
+
+  & > * {
+    margin-top: ($t-vertical-rhythm/2);
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
+
