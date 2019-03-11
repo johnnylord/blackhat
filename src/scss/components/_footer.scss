@@ -1,0 +1,37 @@
+// Footer Setting
+$footer-height: 60px;
+
+// Style of footer component
+.c-footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: $footer-height;
+
+  background: map-get($c-colors, black);
+
+  font-size: map-get($t-type-scale-cls, s1);
+  font-weight: bold;
+
+  // <body> must be relative, min-height: 100%
+  // padding-bottom: $footer-height + $t-vertical-rhythm
+  &.c-footer--bottom {
+    position: absolute;
+    bottom: 0;
+  }
+
+  // Used with l-list together
+  .c-footer__medias {
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    vertical-align: middle;
+    line-height: $footer-height;
+
+    .c-footer__item {
+      margin: 0 .5rem;
+      list-style: none;
+    }
+  }
+}
+
