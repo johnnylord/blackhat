@@ -3,9 +3,12 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0;
   padding: 0;
   list-style: none;
+
+  &.l-list--embed {
+    margin: 0;
+  }
 
   // list item
   .l-item {
@@ -25,7 +28,7 @@
     }
 
     &.l-item--object {
-      margin: .25rem;
+      margin: .25rem .5rem;
     }
   }
 }
