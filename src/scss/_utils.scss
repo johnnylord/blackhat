@@ -1,0 +1,29 @@
+// Utilities class for color of text, background, and border.
+@each $key, $value in $c-colors {
+
+  .u-text-#{""+$key} {
+    color: $value;
+  }
+
+  .u-bg-#{""+$key} {
+    background: $value;
+  }
+
+  .u-border-#{""+$key} {
+    border-color: $value;
+  }
+}
+
+// Utilities class for typography
+@each $key, $value in $t-type-scale-cls {
+  .u-#{$key} {
+    font-size: $value;
+  }
+}
+
+// Responsive image
+.u-img-responsive {
+  width: 100%;
+  height: auto;
+}
+
