@@ -4,6 +4,8 @@
 // 3. Leave some space on the edges, especially valuable on small screens
 .l-wrap {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: flex-start;
   max-width: $l-wrap-max-width; /* 1 */
   margin: 0 auto; /* 2 */
