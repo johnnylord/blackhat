@@ -1,0 +1,249 @@
+// Use default l-list for list container is enough for the project
+
+.c-postcard {
+  display: flex;
+  flex-direction: column;
+  margin-top: $t-vertical-rhythm;
+
+  border-radius: $c-border-radius;
+
+  background: map-get($c-colors, black);
+
+  box-shadow: 0 7px 11px -1px rgba(black, .5);
+  overflow: hidden;
+  z-index: 0;
+
+  // Hover over postcard
+  &:hover {
+    .c-postcard__image { transform: scale(1.3) rotate(3deg); }
+    .c-postcard__metas { left: 0% !important; }
+    .c-postcard__content::before { width: 100% !important; }
+  }
+
+  // Postcard in flatten mode
+  @media (min-width: map-get($l-breakpoints, x-medium)) {
+    flex-direction: row;
+    min-height: 250px;
+
+    // Description section in postcard
+    .c-postcard__description {
+      position: relative;
+      flex-basis: 60%;
+      height: auto;
+
+      &::before {
+        position: absolute;
+        left: -10px;
+        top: 0;
+        bottom: 0;
+        width: 30px;
+
+        background: map-get($c-colors, black);
+
+        content: "";
+
+        @include prefix(transform, skewX(-3deg));
+        z-index: -1;
+      }
+    }
+  }
+
+  // Information section in blog post
+  // 1. The height of the info section is fixed 250px.
+  .c-postcard__info {
+    position: relative;
+    margin: 0;
+    height: 250px; /* 1 */
+
+    z-index: 0;
+    pointer-events: none;
+
+    // Postcard in flatten mode
+    @media (min-width: map-get($l-breakpoints, x-medium)) {
+      position: relative;
+      flex-basis: 40%;
+      height: auto;
+    }
+
+    // Image section in the info of postcard
+    .c-postcard__image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+
+      background-size: cover;
+      background-position: center;
+
+      @include prefix(transition, transform .2s);
+      pointer-events: all;
+    }
+
+    // Meta section in the info of the postcard
+    .c-postcard__metas {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -100%;
+
+      margin: auto;
+      padding: 1rem;
+      width: 100%;
+
+      background: rgba(#000, .6);
+
+      @include prefix(transition, left .2s);
+
+      li {
+        list-style: none;
+      }
+
+      // Author
+      .c-postcard__author::before {
+        font-family: $f-fa-font-family;
+        font-weight: $f-fa-weight-solid;
+        content: fa-content($fa-var-user);
+        margin-right: 10px;
+      }
+
+      // Date
+      .c-postcard__date::before {
+        font-family: $f-fa-font-family;
+        font-weight: $f-fa-weight-solid;
+        content: fa-content($fa-var-calendar-alt);
+        margin-right: 10px;
+      }
+
+      // Readtime
+      .c-postcard__readtime::before {
+        font-family: $f-fa-font-family;
+        font-weight: $f-fa-weight-solid;
+        content: fa-content($fa-var-clock);
+        margin-right: 10px;
+      }
+
+      // Viewcount
+      .c-postcard__viewcount::before {
+        font-family: $f-fa-font-family;
+        font-weight: $f-fa-weight-solid;
+        content: fa-content($fa-var-eye);
+        margin-right: 10px;
+      }
+
+      // Commentcount
+      .c-postcard__commentcount::before {
+        font-family: $f-fa-font-family;
+        font-weight: $f-fa-weight-solid;
+        content: fa-content($fa-var-comment);
+        margin-right: 10px;
+      }
+
+      // Post's tag
+      .c-postcard__tags { /* 1 */
+        ul { margin: 0; padding: 0; }
+
+        ul::before {
+          font-family: $f-fa-font-family;
+          font-weight: $f-fa-weight-solid;
+          content: fa-content($fa-var-tags);
+          margin-right: 15px;
+        }
+
+        li {
+          display: inline-block;
+          margin: 5px 15px 5px 0;
+          list-style: none;
+          &:first-child {
+            margin-left: -5px;
+          }
+        }
+      }
+    }
+  }
+
+  // Styles for description of blog post
+  .c-postcard__description {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: $c-padding;
+
+    background: map-get($c-colors, black);
+
+    z-index: 1;
+
+    // Title section in the description of postcard
+    .c-postcard__title {
+      margin: 0;
+      font-size: map-get($t-type-scale-tag, h3);
+      font-weight: bold;
+    }
+
+    // Content section in the description of postcard
+    .c-postcard__content {
+      position: relative;
+      flex: 1 1 auto;
+      margin: .5rem 0 0 0;
+      padding: 0 0 1.5rem 0;
+      font-size: map-get($t-type-scale-cls, s2);
+
+      // Progress bar
+      &::before {
+        content: "";
+        position: absolute;
+        top: -.5rem;
+        width: 60px;
+        height: 5px;
+
+        border-radius: 3px;
+
+        background: map-get($c-colors, green);
+
+        @include prefix(transition, width .2s);
+      }
+
+      * {
+        margin-top: .5rem;
+        &:first-child {
+          margin: 0;
+        }
+      }
+
+      // Reading more link
+      .c-postcard__more {
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        width: 100%;
+        text-align: right;
+
+        a {
+          display: inline-block;
+          color: map-get($c-colors, blue);
+          font-size: map-get($t-type-scale-cls, s1);
+          &:hover::after {
+            margin-left: 5px;
+            opacity: 1;
+          }
+          &::after {
+            font-family: $f-fa-font-family;
+            font-weight: $f-fa-weight-solid;
+            content: fa-content($fa-var-arrow-right);
+            margin-left: -10px;
+
+            color: map-get($c-colors, blue);
+
+            opacity: 0;
+            vertical-align: middle;
+            @include prefix(transition, margin .3s);
+            @include prefix(transition, opacity .3s);
+          }
+        }
+      }
+    }
+  }
+}
+
