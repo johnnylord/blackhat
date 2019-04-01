@@ -4,7 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "scss": "node-sass src/scss/styles.scss src/scss/blackhat.css",
+    "mincss": "uglifycss src/scss/blackhat.css > dist/css/blackhat.min.css",
+    "compilecss": "npm run scss && npm run mincss",
+
+    "js": "concat src/js/**/*.js -o src/js/black.js",
+    "minjs": "uglifyjs src/js/black.js -o dist/js/blackhat.min.js",
+    "compilejs": "npm run js && npm run minjs",
+
+    "preparedir": "mkdir -p dist/css dist/js",
+    "copysource": "cp -r src/fonts/. dist/fonts && cp -r src/vendors/. dist/vendors",
+    "build": "npm run preparedir && npm run copysource && npm run compilecss && npm run compilejs"
   },
   "repository": {
     "type": "git",
@@ -18,6 +28,8 @@
   "homepage": "https://github.com/johnnylord/blackhat#readme",
   "devDependencies": {
     "documentjs": "^0.5.5",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "uglify-js": "^3.5.3",
+    "uglifycss": "0.0.29"
   }
 }
