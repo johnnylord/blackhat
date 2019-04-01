@@ -1,0 +1,23 @@
+.c-form {
+  padding: $c-padding;
+  margin-top: $t-vertical-rhythm;
+  max-width: 600px;
+
+  background: map-get($c-colors, black);
+  border-radius: $c-border-radius;
+
+  .c-form__control {
+    position: relative;
+    margin-top: 10px;
+
+    &:first-child { margin-top: 0; }
+
+    label {
+      display: block;
+    }
+
+    input {
+      margin-top: 5px;
+    }
+  }
+}
