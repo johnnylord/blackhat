@@ -16,7 +16,10 @@
     "copysource": "cp -r src/fonts/. dist/fonts && cp -r src/vendors/. dist/vendors",
     "build": "npm run preparedir && npm run copysource && npm run compilecss && npm run compilejs",
 
-    "styleguide": "documentjs"
+    "genstyleguide": "documentjs",
+    "copydemos": "cp -r src/demos/. styleguide/demos",
+    "copydist": "cp -r dist/. styleguide/dist",
+    "styleguide": "npm run build && npm run genstyleguide && npm run copydemos && npm run copydist"
   },
   "repository": {
     "type": "git",
