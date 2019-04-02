@@ -1,4 +1,12 @@
 @page styleguide Blackhat
+@group styleguide.lib 0 LIB
+@group styleguide.variables 1 VARIABLES
+@group styleguide.helpers 2 HELPERS
+@group styleguide.base 3 BASE
+@group styleguide.layouts 4 LAYOUTS
+@group styleguide.objects 5 OBJECTS
+@group styleguide.components 6 COMPONENTS
+@group styleguide.utils 7 UTILS
 
 Blackhat is a front-end library, which you can used to design your web page.
 
