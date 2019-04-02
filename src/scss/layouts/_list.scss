@@ -1,9 +1,20 @@
-// Style of list layout
+/**
+ * @parent styleguide.layouts 2
+ * @stylesheet list.scss List Layout
+ */
+
+/**
+ * @styles list List layout
+ *
+ * Here are examples to use list layout
+ *
+ * @demo demos/layouts/list.html
+ */
 .l-list {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   padding: 0;
+  width: 100%;
   list-style: none;
 
   &.l-list--embed {
@@ -12,10 +23,11 @@
 
   // list item
   .l-item {
-    display: block;
+    width: 100%;
+    list-style: none;
 
     &.l-item--inline {
-      display: inline-block;
+      width: auto;
     }
 
     &.l-item--component {
