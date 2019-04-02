@@ -14,7 +14,9 @@
 
     "preparedir": "mkdir -p dist/css dist/js",
     "copysource": "cp -r src/fonts/. dist/fonts && cp -r src/vendors/. dist/vendors",
-    "build": "npm run preparedir && npm run copysource && npm run compilecss && npm run compilejs"
+    "build": "npm run preparedir && npm run copysource && npm run compilecss && npm run compilejs",
+
+    "styleguide": "documentjs"
   },
   "repository": {
     "type": "git",
