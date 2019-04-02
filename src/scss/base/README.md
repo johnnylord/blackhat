@@ -1,4 +1,4 @@
-# Base Folder
+@parent styleguide.base 0
+@page basereadme README
 
-The `base/` folder is where I write any **resets** in addition to `_normalize.scss` in the lib/ folder.
-I'm pretty aggressive with **resetting margins, paddings and looks of input and button elements**
+The `base/` folder contains any **resetting** stylesheet in addition to `_normalize.scss` in `lib/` folder.

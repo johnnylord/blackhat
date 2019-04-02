@@ -1,3 +1,4 @@
-# Layouts Folder
+@parent styleguide.layouts 0
+@page layoutreadme README
 
-The `layout/` folder is where I write layouts that apply **globally** to my project.
+The `layout/` folder contains general layout stylesheets.
