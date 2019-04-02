@@ -8,8 +8,8 @@
     "mincss": "uglifycss src/scss/blackhat.css > dist/css/blackhat.min.css",
     "compilecss": "npm run scss && npm run mincss",
 
-    "js": "concat src/js/**/*.js -o src/js/black.js",
-    "minjs": "uglifyjs src/js/black.js -o dist/js/blackhat.min.js",
+    "js": "concat src/js/**/*.js -o src/js/blackhat.js",
+    "minjs": "uglifyjs src/js/blackhat.js -o dist/js/blackhat.min.js",
     "compilejs": "npm run js && npm run minjs",
 
     "preparedir": "mkdir -p dist/css dist/js",
