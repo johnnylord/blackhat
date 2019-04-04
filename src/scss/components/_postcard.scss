@@ -1,5 +1,60 @@
-// Use default l-list for list container is enough for the project
+/**
+ * @parent styleguide.components 3
+ * @stylesheet postcard.scss Postcard
+ *
+ * Use default l-list for list container is enough for postcards
+ */
 
+/**
+ * @styles postcard Postcard
+ *
+ * Here is an example of using postcard
+ *
+ * ```html
+ * <div class="l-wrap">
+ *   <ul class="l-list">
+ *     <li class="l-item l-item--component">
+ *       <!--Postcard-->
+ *       <div class="c-postcard">
+ *         <!--postcard information-->
+ *         <div class="c-postcard__info">
+ *           <a href="#" class="c-postcard__image" style="background-image: url('https://johnnylord.com/media/blog/general/start-my-blogging-life/feature.jpg')"></a>
+ *           <!--Cover detail-->
+ *           <ul class="c-postcard__metas">
+ *             <li class="c-postcard__date">XXXX-XX-XX</li>
+ *             <li class="c-postcard__readtime">XX</li>
+ *             <li class="c-postcard__viewcount">XX</li>
+ *             <li class="c-postcard__tag">
+ *               <ul>
+ *                 <li><a href="#" class="o-tag">Tag</a></li>
+ *                 <li><a href="#" class="o-tag">Tag</a></li>
+ *                 <li><a href="#" class="o-tag">Tag</a></li>
+ *               </ul>
+ *             </li>
+ *           </ul>
+ *         </div>
+ *         <!--postcard description-->
+ *         <div class="c-postcard__description">
+ *           <h2 class="c-postcard__title">Title</h2>
+ *           <div class="c-postcard__content">
+ *             <p>
+ *             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+ *             tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+ *             vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+ *             no sea takimata sanctus est Lorem ipsum dolor sit amet.
+ *             </p>
+ *             <div class="c-postcard__more">
+ *               <a href="#">READ MORE</a>
+ *             </div>
+ *           </div>
+ *         </div>
+ *       </div>
+ *     </li>
+ *   </ul>
+ * </div>
+ * ```
+ * @demo demos/components/postcard/demo.html
+ */
 .c-postcard {
   display: flex;
   flex-direction: column;

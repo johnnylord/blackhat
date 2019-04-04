@@ -1,4 +1,25 @@
-// Style of o-tag
+/**
+ * @parent styleguide.objects 1
+ * @stylesheet tag.scss Tag
+ */
+
+
+/**
+ * @styles tag Tag
+ *
+ * Here is an example of using tag
+ *
+ * ```html
+ * <div class="l-wrap">
+ *   <ul class="l-list">
+ *     <li class="l-item l-item--inline l-item--object"><a class="o-tag" href="#">Tag</a></li>
+ *     <li class="l-item l-item--inline l-item--object"><a class="o-tag" href="#">Tag</a></li>
+ *     <li class="l-item l-item--inline l-item--object"><a class="o-tag" href="#">Tag</a></li>
+ *   </ul>
+ * </div>
+ * ```
+ * @demo demos/objects/tag/demo.html
+ */
 .o-tag {
   display: inline-block;
   position: relative;

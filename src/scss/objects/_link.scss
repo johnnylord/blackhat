@@ -1,4 +1,25 @@
-// Style of o-link
+/**
+ * @parent styleguide.objects 4
+ * @stylesheet link.scss Link
+ */
+
+
+/**
+ * @styles link Link
+ *
+ * Here is an example of using link
+ *
+ * ```html
+ * <div class="l-wrap">
+ *   <ul class="l-list">
+ *     <li class="l-item l-item--inline l-item--object"><a class="o-link o-link--red" href="#">Tag</a></li>
+ *     <li class="l-item l-item--inline l-item--object"><a class="o-link o-link--green" href="#">Tag</a></li>
+ *     <li class="l-item l-item--inline l-item--object"><a class="o-link o-link--blue" href="#">Tag</a></li>
+ *   </ul>
+ * </div>
+ * ```
+ * @demo demos/objects/link/demo.html
+ */
 .o-link {
   position: relative;
 

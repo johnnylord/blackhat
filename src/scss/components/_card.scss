@@ -1,6 +1,42 @@
-// Customized list container rather than default l-list
-// Change the number of cards on each row of the list based
-// on the view's size
+/**
+ *@parent styleguide.components 5
+ *@stylesheet card.scss Card
+ */
+
+/**
+ * @styles cards Cards
+ *
+ * Here is an example of using card list
+ *
+ * ```html
+ * <ul class="c-cards">
+ *   <li class="c-cards__item">
+ *     <div class="c-card">
+ *       <div class="c-card__image" style="background-image: url('https://johnnylord.com/media/blog/general/start-my-blogging-life/feature.jpg')"></div>
+ *       <div class="c-card__description">
+ *         <h2 class="c-card__title">Card title</h2>
+ *         <div class="c-card__content">
+ *           <p>
+ *             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+ *             tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+ *             vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+ *             no sea takimata sanctus est Lorem ipsum dolor sit amet.
+ *           </p>
+ *         </div>
+ *       </div>
+ *     </div>
+ *   </li>
+ *   <li class="c-cards__item">
+ *    ...
+ *   </li>
+ *   <li class="c-cards__item">
+ *    ...
+ *   </li>
+ * </ul>
+ *
+ * ```
+ * @demo demos/components/card/cards/demo.html
+ */
 .c-cards {
   display: flex;
   flex-wrap: wrap;
@@ -42,6 +78,29 @@
   }
 }
 
+/**
+ * @styles card Card
+ *
+ * Here is an example of using Card
+ *
+ * ```html
+ * <div class="c-card">
+ *   <div class="c-card__image" style="background-image: url('https://johnnylord.com/media/blog/general/start-my-blogging-life/feature.jpg')"></div>
+ *   <div class="c-card__description">
+ *     <h2 class="c-card__title">Card title</h2>
+ *     <div class="c-card__content">
+ *       <p>
+ *         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+ *         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+ *         vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+ *         no sea takimata sanctus est Lorem ipsum dolor sit amet.
+ *       </p>
+ *     </div>
+ *   </div>
+ * </div>
+ * ```
+ * @demo demos/components/card/card/demo.html
+ */
 .c-card {
   display: flex;
   flex-direction: column;

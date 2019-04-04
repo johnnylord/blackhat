@@ -1,10 +1,40 @@
-// Dependency: jquery
-// <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+/**
+ * @parent styleguide.components 1
+ * @stylesheet navbar.scss Navbar
+ *
+ * Place following snippet before the enclosing body tag
+ */
+
 
 // Setting of navbar
 $navbar-height: 60px;
 
-// Style of navbar component
+/**
+ * @styles navbar Navbar
+ *
+ * Here is an example using navbar
+ *
+ * ```html
+ * <header class="c-navbar" id="jsNavbar">
+ *   <div class="l-wrap">
+ *     <div class="c-navbar__brand">
+ *       JohnnyLord
+ *     </div>
+ *     <ul class="c-navbar__navs" id="jsNavbarNavs">
+ *       <li class="c-navbar__item"><a href="#">Anchor Text</a></li>
+ *       <li class="c-navbar__item"><a href="#">Anchor Text</a></li>
+ *       <li class="c-navbar__item"><a href="#">Anchor Text</a></li>
+ *     </ul>
+ *     <div class="c-navbar__mobile">
+ *        <a id="jsNavbarToggle">
+ *          <span></span>
+ *        </a>
+ *     </div>
+ *   </div>
+ * </header>
+ * ```
+ * @demo demos/components/navbar/navbar/demo.html
+ */
 .c-navbar {
   position: relative;
   display: flex;
@@ -20,6 +50,32 @@ $navbar-height: 60px;
 
   z-index: 1000;
 
+  /**
+   * @styles dynamicnavbar Dynamic Navbar
+   *
+   * Here is an example using dynamic navbar
+   *
+   * ```html
+   * <header class="c-navbar c-navbar--dynamic" id="jsNavbar">
+   *   <div class="l-wrap">
+   *     <div class="c-navbar__brand">
+   *       JohnnyLord
+   *     </div>
+   *     <ul class="c-navbar__navs" id="jsNavbarNavs">
+   *       <li class="c-navbar__item"><a href="#">Anchor Text</a></li>
+   *       <li class="c-navbar__item"><a href="#">Anchor Text</a></li>
+   *       <li class="c-navbar__item"><a href="#">Anchor Text</a></li>
+   *     </ul>
+   *     <div class="c-navbar__mobile">
+   *        <a id="jsNavbarToggle">
+   *          <span></span>
+   *        </a>
+   *     </div>
+   *   </div>
+   * </header>
+   * ```
+   * @demo demos/components/navbar/dynamic-navbar/demo.html
+   */
   // Add #jsNavbar to have the dynamic navbar effect
   &.c-navbar--dynamic {
     position: fixed;

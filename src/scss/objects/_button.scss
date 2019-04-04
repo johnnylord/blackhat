@@ -1,4 +1,24 @@
-// Styles for o-btn class
+/**
+ * @parent styleguide.objects 3
+ * @stylesheet button.scss Button
+ */
+
+
+/**
+ * @styles button Button
+ *
+ * Here is an example of using button
+ *
+ * ```html
+ * <div class="l-wrap">
+ *   <ul class="l-list">
+ *     <li class="l-item l-item--inline l-item--object"><a class="o-btn o-btn--red">Anchor</a></li>
+ *     <li class="l-item l-item--inline l-item--object"><a class="o-btn o-btn--blue">Anchor</a></li>
+ *   </ul>
+ * </div>
+ * ```
+ * @demo demos/objects/button/demo.html
+ */
 .o-btn {
   display: inline-block;
   padding: $o-padding;

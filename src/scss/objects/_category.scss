@@ -1,4 +1,30 @@
-// Style of o-category
+/**
+ * @parent styleguide.objects 2
+ * @stylesheet category.scss Category
+ */
+
+/**
+ * @styles category Category
+ *
+ * Here is an example of using category
+ *
+ * ```html
+ * <div class="l-wrap">
+ *   <ul class="l-list">
+ *     <li class="l-item l-item--inline l-item--object">
+ *       <a class="o-category" href="#">Tag<span class="o-category__detail">xxx</span></a>
+ *     </li>
+ *     <li class="l-item l-item--inline l-item--object">
+ *       <a class="o-category o-category--red" href="#">Tag<span class="o-category__detail">xxx</span></a>
+ *     </li>
+ *     <li class="l-item l-item--inline l-item--object">
+ *       <a class="o-category o-category--green" href="#">Tag<span class="o-category__detail">xxx</span></a>
+ *     </li>
+ *   </ul>
+ * </div>
+ * ```
+ * @demo demos/objects/category/demo.html
+ */
 .o-category {
   display: inline-block;
   padding: $o-padding;

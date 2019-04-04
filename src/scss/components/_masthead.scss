@@ -1,4 +1,22 @@
-// Style of masthead component
+/**
+ * @parent styleguide.components 7
+ * @stylesheet masthead.scss Masthead
+ */
+
+
+/**
+ * @styles masthead Masthead
+ *
+ * Here is an example of using masthead
+ *
+ * ```html
+ * <div class="c-masthead">
+ *   <h2>Title</h2>
+ *   <p>Description is asda asdasd</p>
+ * </div>
+ * ```
+ * @demo demos/components/masthead/demo.html
+ */
 .c-masthead {
   display: flex;
   flex-direction: column;

@@ -1,3 +1,23 @@
+/**
+ *@parent styleguide.components 6
+ *@stylesheet form.scss Form
+ */
+
+/**
+ * @styles form Form
+ *
+ * Here is an example of using form
+ *
+ * ```html
+ * <form class="c-form">
+ *   <div class="c-form__control">
+ *     <label for="name">Name</label>
+ *     <input type="text" name="name" id="name" value="" placeholder="Name"/>
+ *   </div>
+ * </form>
+ * ```
+ * @demo demos/components/form/form/demo.html
+ */
 .c-form {
   padding: $c-padding;
   margin-top: $t-vertical-rhythm;
@@ -5,6 +25,39 @@
 
   background: map-get($c-colors, black);
   border-radius: $c-border-radius;
+
+  /**
+   * @styles embeddedform Embedded Form
+   *
+   * Here is an example of embedding form into another component
+   *
+   * ```html
+   * <div class="c-card">
+   *   <div class="c-card__description">
+   *     <h2 class="c-card__title">Card title</h2>
+   *     <div class="c-card__content">
+   *       <p>
+   *         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+   *         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+   *         vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+   *         no sea takimata sanctus est Lorem ipsum dolor sit amet.
+   *       </p>
+   *       <form class="c-form c-form--embed">
+   *         <div class="c-form__control">
+   *           <label for="name">Name</label>
+   *           <input type="text" name="name" id="name" value="" placeholder="Name"/>
+   *         </div>
+   *       </form>
+   *     </div>
+   *   </div>
+   * </div>
+   * ```
+   * @demo demos/components/form/embed/demo.html
+   */
+  &.c-form--embed {
+    margin-top: ($t-vertical-rhythm/2);
+    background: lighten(map-get($c-colors, black), 3%);
+  }
 
   .c-form__control {
     position: relative;
