@@ -17,7 +17,7 @@
     "build": "npm run preparedir && npm run copysource && npm run compilecss && npm run compilejs",
 
     "genstyleguide": "documentjs",
-    "copydemos": "cp -r src/demos/. styleguide/demos",
+    "copydemos": "cp -r demos/. styleguide/demos",
     "copydist": "cp -r dist/. styleguide/dist",
     "styleguide": "npm run build && npm run genstyleguide && npm run copydemos && npm run copydist"
   },
